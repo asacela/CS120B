@@ -17,17 +17,13 @@ int main(void) {
 	DDRA = 0x00; PORTA = 0xFF;
 	DDRC = 0xFF; PORTC = 0x00;
     /* Insert your solution below */
-    unsigned char tmp1 = 0x00;
-    unsigned char tmp2 = 0x00;
-
+    unsigned char tmpA = 0x00;
     unsigned char tmpC = 0x00;
-    unsigned char tmpD = 0x00;
 
     while (1) {
-    	tmp1 = (PINA & 0x0F);
-    	tmp2 = (PINA & 0xF0)
-
-    	switch(tmp1){
+    	tmpA = (PINA & 0x0F);
+    	
+    	switch(tmpA){
     		case 0x00:
     			tmpC = 0x00;
     			break;
@@ -69,18 +65,7 @@ int main(void) {
     			break;
     	}
 
-    if((tmp2 & 0x30) == 0x30){
-    	if((tmp2 & 0x70) == 0x70){
-    		tmpD = 0x80;
-    	}
-    	else{
-    		tmpD = 0x80;
-    	}
-    }
-
-
-
-    PORTC = (tmpC | tmpD);
+    PORTC = tmpC;
      
     }
     return 1;

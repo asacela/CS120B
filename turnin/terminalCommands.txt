@@ -1,1 +1,89 @@
 avr-gcc -mmcu=atmega1284 -I/usr/csshare/pkgs/simavr/ -Iheader/ -D_SIMULATE_ -Wall -Wl,--undefined=_mmcu,--section-start=.mmcu=910000 -o build/objects/main.elf source/main.c
+
+
+switch(tmp1){
+    		case 0x00:
+    			tmpC = 0x00;
+    			break;
+
+    		case 0x01:
+    		case 0x02:
+    			tmpC = 0x60;
+    			break;
+
+    		case 0x03:
+    		case 0x04:
+    			tmpC = 0x70;
+    			break;
+
+    		case 0x05:
+    		case 0x06:
+    			tmpC = 0x38;
+    			break;
+
+    		case 0x07:
+    		case 0x08:
+    		case 0x09:
+    			tmpC = 0x3C;
+    			break;
+
+    		case 0x0A:
+    		case 0x0B:
+    		case 0x0C:
+    			tmpC = 0x3E;
+    			break;
+
+    		case 0x0D:
+    		case 0x0E:
+    		case 0x0F:
+    			tmpC = 0x3F;
+    			break;
+    		default:
+    			tmpC = 0x00;
+    			break;
+    	}
+
+if(tmp1 == 0x00){
+	tmpC = 0x00;
+}
+else if(tmp1 == (0x01 || 0x02)){
+	tmpC = 0x60;
+}
+else if(tmp1 == (0x03 || 0x04)){
+	tmpC = 0x70;
+}
+else if(tmp1 == (0x05 || 0x06)){
+	tmpC = 0x38;
+}
+else if(tmp1 == (0x07 || 0x08 || 0x09)){
+	tmpC = 0x3C;
+}
+else if(tmp1 == (0x0A || 0x0B || 0x0C)){
+	tmpC = 0x3E;
+}
+else if(tmp1 == (0x0D || 0x0E || 0x0F)){
+	tmpC = 0x3F;
+}
+else{
+	tmpC = 0x00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
